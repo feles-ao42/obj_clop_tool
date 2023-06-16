@@ -7,5 +7,5 @@ obj形式の3Dファイルを座標ベースで切り出す
 ``` sh
 cp sample.env .envrc
 direnv edit .
-python3 main.py
+python3 obj.py
 ```
