@@ -20,16 +20,15 @@ def extract_coordinates_from_obj(obj_file, xmin, xmax, ymin, ymax, zmin, zmax, o
 
     print(f"Extracted coordinates saved to {output_file}.")
 
+obj_file_path = "./data/obj/after.obj"
+output_file_path = "./data/obj/out_after.obj"
 
-obj_file_path = os.environ.get('OBJ_FILE_PATH')
-output_file_path = os.environ.get('OUTPUT_FILE_PATH')
-
-xmin = float(os.environ.get('XMIN', 0.0))
-xmax = float(os.environ.get('XMAX', 1.0))
-ymin = float(os.environ.get('YMIN', 0.0))
-ymax = float(os.environ.get('YMAX', 1.0))
-zmin = float(os.environ.get('ZMIN', 0.0))
-zmax = float(os.environ.get('ZMAX', 1.0))
+xmin = 0.0
+xmax = 100.0
+ymin = 0.0
+ymax = 50.0
+zmin = 0.0
+zmax = 100.0
 
 extract_coordinates_from_obj(obj_file_path, xmin, xmax, ymin, ymax, zmin, zmax, output_file_path)
 

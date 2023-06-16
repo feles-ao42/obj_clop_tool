@@ -1,11 +1,10 @@
-# object file crop tool
+# 3D file crop tool
 
 ## できること
-obj形式の3Dファイルを座標ベースで切り出す
+obj,las形式の3Dファイルを座標ベースで切り出す
 
 ## 使い方
 ``` sh
-cp sample.env .envrc
-direnv edit .
 python3 obj.py
+python3 las.py
 ```
