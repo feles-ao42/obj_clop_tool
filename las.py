@@ -12,8 +12,18 @@ def extract_points_by_coordinates(input_file, output_file, min_x, max_x, min_y, 
     y_range = np.logical_and(inFile.y >= min_y, inFile.y <= max_y)
     z_range = np.logical_and(inFile.z >= min_z, inFile.z <= max_z)
     selected_points = np.logical_and(np.logical_and(x_range, y_range), z_range)
-    print(inFile.x)
-    print(inFile.y)
+    print("X ~~~~~~~~")
+    print(inFile.x.min())
+    print(inFile.x.max())
+    print((inFile.x.max() - inFile.x.min()) / 2)
+    print("Y ~~~~~~~~")
+    print(inFile.y.min())
+    print(inFile.y.max())
+    print((inFile.y.max() - inFile.y.min()) / 2)
+    # print("Z ~~~~~~~~")
+    # print(inFile.z.min())
+    # print(inFile.z.max())
+    # print(inFile.z.max() - inFile.z.min())
 
     if np.any(selected_points):
         # 選択されたポイントを新しいLASファイルに書き込みます
@@ -29,11 +39,11 @@ def extract_points_by_coordinates(input_file, output_file, min_x, max_x, min_y, 
 input_file = "./data/las/input.las"  # 入力ファイルのパス
 output_file = "./data/las/output.las"  # 出力ファイルのパス
 
-min_x = 357100
-max_x = 357170
-min_y = 3917360
-max_y = 3917440
+min_x = 357103
+max_x = 357201
+min_y = 3917373
+max_y = 3917517
 min_z = 0
-max_z = 100
+max_z = 300
 
 extract_points_by_coordinates(input_file, output_file, min_x, max_x, min_y, max_y, min_z, max_z)
